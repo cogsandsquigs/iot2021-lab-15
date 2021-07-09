@@ -17,15 +17,12 @@ os_thread_t t1;
 os_thread_t t2;
 os_thread_t t3;
 
-//os_mutex_t serial_mutex;
-
 int inc = 0;
 
 void setup()
 {
   Serial.begin(9600);
 
-  //os_mutex_create(&serial_mutex);
   os_thread_create(&t1, "t1", OS_THREAD_PRIORITY_DEFAULT, T1, NULL, 1024);
   os_thread_create(&t2, "t2", OS_THREAD_PRIORITY_DEFAULT, T2, NULL, 1024);
   os_thread_create(&t3, "t3", OS_THREAD_PRIORITY_DEFAULT, T3, NULL, 1024);
